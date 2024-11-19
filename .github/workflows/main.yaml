@@ -19,7 +19,7 @@ jobs:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
           scope: "@ens-vision-pte-ltd"
-      - run: npm ci  # More reliable than npm install for CI environments
+      - run: npm install  # Changed from npm ci to generate package-lock.json
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
